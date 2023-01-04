@@ -360,6 +360,7 @@ server <- function(input, output, session) {
                      'funding_type', 'location', 'country')
       #apply order
       response_data <- response_data[, col_order]
+      response_data$year <- as.integer(response_data$year) 
       
       #read latest excel in 
       #part below only works when the first excel file was written - delete ### after first use

@@ -366,6 +366,9 @@ server <- function(input, output, session) {
         old_data <-   list.files( pattern = '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]_[0-9]{2}-[0-9]{2}.xlsx') %>%
            map_df(~read_xlsx(.))
         
+        # make sure year = integer
+        old_data$year <- as.integer(old_data$year)
+        
       # following line as comment after first use
     #  old_data <- read_xlsx("funding_overview_all.xlsx")
         
